@@ -1,4 +1,4 @@
-name: "Project IAAC"
+name: Project IAAC
 on:
   push:
     branches:
