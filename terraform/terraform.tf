@@ -27,7 +27,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "projectactions261223"
+    bucket = var.BucketName
     key    = "terraform.tfstate"
     region = var.region
   }
