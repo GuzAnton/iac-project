@@ -1,14 +1,4 @@
 name: "Project IAAC"
-env:
-    # Credentials for Deployment to AWS
-    AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
-    AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
-    # S3 bucket for Terraform state
-    BUCKET_TF_STATE: ${{secrets.BUCKET_TF_STATE}}
-    # AWS Region
-    AWS_REGION: eu-central-1
-    # EKS Cluster
-    EKS_CLUSTER: project-eks
 on:
   push:
     branches:
@@ -21,6 +11,16 @@ on:
       - main
     paths:
       - terraform/**
+env:
+    # Credentials for Deployment to AWS
+    AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
+    AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+    # S3 bucket for Terraform state
+    BUCKET_TF_STATE: ${{secrets.BUCKET_TF_STATE}}
+    # AWS Region
+    AWS_REGION: eu-central-1
+    # EKS Cluster
+    EKS_CLUSTER: project-eks
 jobs:
     terraform:
         runs-on: ubuntu-latest
